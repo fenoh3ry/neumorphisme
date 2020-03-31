@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		body{
+			background: #eee;
+			padding: 100px;
+		}
+		button{
+			--taille: 80px;
+			--flou: calc(var(--taille) / 10);
+			--inset: 0px;
+
+			box-sizing: border-box;
+			width: var(--taille);
+			height: var(--taille);
+			font-size: calc(var(--taille) / 3);
+			line-height: var(--taille);
+			text-align: center;
+			outline: none;
+
+			background: #eee;
+			border: none;
+			border-radius: 100%;
+			color: #444;
+
+			box-shadow: 
+				var(--flou) var(--flou) var(--flou) rgba(0,0,0,0.2),
+				calc(var(--flou) * -1) calc(var(--flou) * -1) var(--flou) rgba(255,255,255, 0.5),
+				inset var(--inset) var(--inset) var(--inset) rgba(0,0,0,0.2),
+				inset calc(var(--inset) * -1) calc(var(--inset) * -1) var(--inset) rgba(255,255,255, 0.5);
+
+			transition: 0.2s;
+		}
+		button:hover{
+			--inset: var(--flou);		
+		}
+	</style>
+</head>
+<body>
+	<button>Ok</button>
+</body>
+</html>
